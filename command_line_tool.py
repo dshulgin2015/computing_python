@@ -21,14 +21,12 @@ def request_body_builder(accountId, name, email, fromTo):
 
 	dates = [x.split('-') for x in fromTo.split()]
 
-	to_timestamp = lambda y,m,d: datetime(y,m,d).strftime('%s')
-
-	timestamps = {}
-
-	timestamps ['from'] = to_timestamp(int(dates[0][0],10),int(dates[0][1],10),int(dates[0][2],10))
-	timestamps ['to'] = to_timestamp(int(dates[1][0],10),int(dates[1][1],10),int(dates[1][2],10))
-
-
+	#to_timestamp = lambda y,m,d: datetime(y,m,d).strftime('%s')
+	#timestamps = {}
+	#timestamps ['from'] = to_timestamp(int(dates[0][0],10),int(dates[0][1],10),int(dates[0][2],10))
+	#timestamps ['to'] = to_timestamp(int(dates[1][0],10),int(dates[1][1],10),int(dates[1][2],10))
+	#For future purposes
+	
 	request_body = {
     "report": "Coke:Actions",
     "description": name,

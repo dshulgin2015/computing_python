@@ -6,6 +6,7 @@ __pycache__/
 #data files
 *.csv
 *.json
+*.fasta
 
 # C extensions
 *.so

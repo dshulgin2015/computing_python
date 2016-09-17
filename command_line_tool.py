@@ -2,10 +2,6 @@
 import optparse
  
 
-
-MASTER_API_KEY = 'p4nAliTik5uHJ3byj04i8yMnPtn2R72lo4RKMZTgmB7hLnmQHpVx2PThsiUu4txzz88UxXv8ia6h3FNR'
-
-
 def request_body_builder(accountId, name, email, fromTo):
 
 	import json

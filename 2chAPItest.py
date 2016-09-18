@@ -24,5 +24,5 @@ for i in xrange(0, len(bel_board)):
         int('1474070400'))
     if date <= cur_date:
         subject = bel_board[i]["subject"]
-        if re.search('^.*(окр)', subject) is not None:
+        if re.search('^.*(тян)', subject) is not None:
             print subject

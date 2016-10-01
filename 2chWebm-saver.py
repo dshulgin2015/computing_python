@@ -21,8 +21,6 @@ comments = json.loads(urllib2.urlopen(
 
 print comments['threads'][0]['posts'][0]['files'][0]['path']
 
-
-
 # for i in xrange(0, len(bel_board)):
 #     date = datetime.datetime.fromtimestamp(
 #         int(bel_board[i]['timestamp']))

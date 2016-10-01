@@ -16,13 +16,19 @@ for i in xrange(0, len(response["threads"])):
         "subject": response["threads"][i]["subject"].encode('utf-8'),
         "timestamp": response["threads"][i]["timestamp"]})
 
+comments = json.loads(urllib2.urlopen(
+    'https://2ch.hk/media/res/17706.json').read())
 
-for i in xrange(0, len(bel_board)):
-    date = datetime.datetime.fromtimestamp(
-        int(bel_board[i]['timestamp']))
-    cur_date = datetime.datetime.fromtimestamp(
-        int('1474070400'))
-    if date <= cur_date:
-        subject = bel_board[i]["subject"]
-        if re.search('^.*(окр)', subject) is not None:
-            print subject
+print comments['threads'][0]['posts'][0]['files'][0]['path']
+
+
+
+# for i in xrange(0, len(bel_board)):
+#     date = datetime.datetime.fromtimestamp(
+#         int(bel_board[i]['timestamp']))
+#     cur_date = datetime.datetime.fromtimestamp(
+#         int('1474070400'))
+#     if date > cur_date:
+#         subject = bel_board[i]["subject"]
+#         if re.search('^.*()', subject) is not None:
+#             print subject

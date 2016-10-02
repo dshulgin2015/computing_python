@@ -78,10 +78,11 @@ def main():
     #             "Allele frequency VCF (--vcf) specified does not exist.")
     pop1 = pysam.VariantFile(check_files[0], "r").fetch()
     pop2 = pysam.VariantFile(check_files[1], "r").fetch()
-    merged_df = pd.read_csv("expected_st_1.txt", delim_whitespace=True, header=0)
+    merged_df = pd.read_csv("expected_st_1.txt",
+                            delim_whitespace=True, header=0)
 
-    columns = ['contig', 'pos', 'id', 'ref', 'alt', 'ref-freq-My',
-               'ref-freq-Sp', 'alt-A-freq-My', 'alt-A-freq-Sp']
+    columns = ['contig', 'pos', 'id', 'ref', 'alt', 'ref-freq-' + args.pop1,
+               'ref-freq-' + + args.pop2, 'alt-A-freq-' + + args.pop1, 'alt-A-freq-' + args.pop2]
     ref1 = []
     alt1 = []
     k = 0

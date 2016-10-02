@@ -1,4 +1,4 @@
-contig	pos	id	ref	alt	ref-freq-My	ref-freq-Sp	alt-A-freq-My	alt-A-freq-Sp
+contig	pos	id	ref	alt
 2	15881553	.	C	A
 2	15881764	.	T	C
 2	15881767	.	C	T

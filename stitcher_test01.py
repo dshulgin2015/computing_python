@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import argparse
 import pysam
 import string
@@ -34,11 +35,11 @@ def main():
                         help="sorted vcf file (comma separated if there are multiple vcf's) containing allele frequency for reference and alternate allele for population 2",
                         required=True)
     parser.add_argument(
-        "--pop1", help="Sample name for population 1", type=string, required=True)
+        "--pop1", help="Sample name for population 1", required=True)
     parser.add_argument(
-        "--pop2", help="Sample name for population 2", type=string, required=True)
+        "--pop2", help="Sample name for population 2", required=True)
     parser.add_argument(
-        "--output", help="Name of the output file", type=string, required=True)
+        "--output", help="Name of the output file", required=False)
 
     # debug / development / reporting
     parser.add_argument(
@@ -81,8 +82,8 @@ def main():
     merged_df = pd.read_csv("expected_st_1.txt",
                             delim_whitespace=True, header=0)
 
-    columns = ['contig', 'pos', 'id', 'ref', 'alt', 'ref-freq-' + args.pop1,
-               'ref-freq-' + + args.pop2, 'alt-A-freq-' + + args.pop1, 'alt-A-freq-' + args.pop2]
+    columns = ['contig', 'pos', 'id', 'ref', 'alt', 'ref-freq-' + str(args.pop1),
+               'ref-freq-' + str(args.pop2), 'alt-A-freq-' + str(args.pop1), 'alt-A-freq-' + str(args.pop2)]
     ref1 = []
     alt1 = []
     k = 0

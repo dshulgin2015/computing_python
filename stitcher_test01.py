@@ -39,7 +39,7 @@ def main():
     parser.add_argument(
         "--pop2", help="Sample name for population 2", required=True)
     parser.add_argument(
-        "--output", help="Name of the output file", required=False)
+        "--output", help="Name of the output file", required=True)
 
     # debug / development / reporting
     parser.add_argument(
@@ -109,7 +109,7 @@ def main():
     merged_df[columns[7]] = alt1
     merged_df[columns[8]] = alt2
 
-    merged_df.to_csv('output.txt', sep=' ', encoding='utf-8')
+    merged_df.to_csv(str(args.output), sep=' ', encoding='utf-8')
 
 if __name__ == "__main__":
     main()

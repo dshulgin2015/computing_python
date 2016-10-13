@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 require 'csv'
@@ -48,12 +47,10 @@ products.xpath('//ul[@class="families-list"]/li/a/@href').each do |product|
 	      et_s << node.text.strip
 	end
 
-	#nokogiri_object = Nokogiri::HTML(http.body_str)
-
 	CSV.open(file, "ab") do |csv|
 
 		for i in 0..titles.length-1
-		   csv << [titles[i], prices[i], image, et_s[i], codes[0]]
+		   csv << [titles[i], prices[i], image, et_s[i], codes[i]]
 		end
 
 	end

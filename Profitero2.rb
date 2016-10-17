@@ -73,3 +73,5 @@ CSV.open(file, "ab") do |csv|
 	end
 
 end
+
+puts "File " + file + " has been successfully saved"

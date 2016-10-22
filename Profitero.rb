@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 require 'nokogiri'
 require 'open-uri'
-require 'csv'
+require "csv"
+
 
 host = 'https://www.viovet.co.uk'
 
